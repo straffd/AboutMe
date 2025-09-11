@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JZ's About Me </title>
+        <style>
+             body{
+                margin: 0;
+                padding: 0;
+                padding-top: 0;
+                zoom: 98%;
+                background-image: url('images/gljrwn.jpe');
+                width: 100vw;
+                height: 60vw;
+                background-position: -5vw -4vw;
+                background-color: #171718;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font: Inter,sans-serif;
+                overflow: hidden;
+                object-fit: cover;
+                transform-origin: top left; /* or 0 0; */
+                transform: scale(1);
+            }
+            .logo {
+                width: 3.13vw;
+                margin-left: 9.77vw;
+                display: inline;
+            }
+            .arrow {
+                position:absolute;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #6c6c7d;
+                border: none;
+                top: 1.15vw;
+                left:1.2vw;
+                transition: 0.1s;
+            }
+            .arrow:hover {
+                opacity: 0.8;
+                color: #c8c7ca;
+                cursor: pointer;
+            }
+            .search-bar:hover,.friend-count:hover ,.status:hover{
+                opacity: 0.7;
+                background-color: #b2b2b2;
+                cursor: pointer;
+            }
+            .top-left{
+                display: inline-block;
+            }
+            .top-mid-left{
+                position:absolute;
+                top:0vw;
+                left:23vw;
+                height:3.1vw;
+                width:77vw;
+                background-color: transparent;
+                font: Inter,sans-serif;
+            }
+            .search-bar {
+                position:absolute;
+                top:1.2vw;
+                height: 1.13vw;
+                width: 7.81vw;
+                left: 2.1vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #303037;
+                font-family: sans-serif;
+                font-weight: 200;
+                color: rgb(255, 255, 255);
+                padding-left: 0.16vw;
+                outline: 0;
+                transition: 0.1s;
+            }
+            .category-top {
+                position: absolute;
+                top:1.26vw;
+                left: 11vw;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #ffffff;
+                border: none;
+                font-family:Arial, Helvetica, sans-serif
+            }
+            .category-top-inactive {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 18.2vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-browse {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 15vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-inactive:hover,.category-top-right1-inactive:hover, .category-top-right-inactive:hover, .category-browse:hover{
+                opacity: 0.8;
+                color: #ffffff;
+                cursor: pointer;
+                padding-bottom: 0.5vw;
+            }
+            .category-top-right1-inactive {
+                position: absolute;
+                background-color: transparent;
+                font-size: 0.74vw;
+                color: #72717a;
+                border: none;
+                top:1.3vw;
+                left: 59.9vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-right-inactive {
+                background-color: transparent;
+                position: absolute;
+                font-size: 0.74vw;
+                color: #6c6b74;
+                border: none;
+                top:1.3vw;
+                left:63.5vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .cart-count {
+                position: absolute;
+                left: 65.8vw;
+                top:1.2vw;
+                height: 0.98vw;
+                width: 1.56vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #00bfff;
+            }
+            .vertical-line {
+                position:absolute;
+                width: 0.08vw;
+                height: 1.17vw; 
+                background-color: #52515a; 
+                display: inline-block;
+                left:68.5vw;
+                top:1.1vw;
+            }
+            .friend-count {
+                position: absolute;
+                height: 1.56vw;
+                width: 2.34vw;
+                top:0.9vw;
+                left:69.5vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #414141;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+                padding-left: 1vw;  
+            }
+            .friend{
+                width: 0.78vw;
+                position: absolute;
+                left:0.34vw;
+                top:0.35vw;
+                display: inline;
+            }
+            .status {
+                position:absolute;
+                top:0.7vw;
+                left:72.5vw;
+                height: 1.95vw;
+                vertical-align: 1.05vw;
+                width: 1.95vw;
+                border-radius: 0.98vw;
+                border: none;
+                font-size: 0.98vw;
+                line-height: 1em;
+                padding: 0;
+                background-color: #6c6b7447;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+            }
+            .online {
+                position: absolute;
+                z-index: 10;
+                width: 0.4vw;
+                height: 0.4vw;
+                border: none;
+                top:2.1vw;
+                left:74vw;
+                background-color: rgb(2, 254, 2);
+                border-radius: 0.2vw;
+            }
+            .left-tabs{
+                display:inline-block
+            }
+            .tabs-about-me {
+                position: absolute;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: #6c6b7447;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .pfp-tab {
+                width: 3.13vw;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+            }
+            .about-me-word {
+                position: absolute;
+                top: 0.51vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-music{
+                position: absolute;
+                display:inline-block;
+                margin-top: 4.69vw;
+            }
+            .tabs-other-things:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+
+            
+            .tabs-music-taste {
+                position: absolute;
+                margin-top: 1.05vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: transparent;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .tabs-other-things {
+                position: absolute;
+                margin-top: 1vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: transparent;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .music-tab {
+                width: 3.91vw;
+                zoom: 80%;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+
+            }
+            
+            .music-taste-word {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-other{
+                position: absolute;
+                display:inline-block;
+                margin-top: 8.98vw;
+            }
+            .left-tabs-launch{
+                position: absolute;
+                display:inline-block;
+                left: -3.52vw;
+                margin-top: 12.89vw;
+            }
+            .launch-word {
+                position: absolute;
+                top: 2.15vw;
+                width: 21.48vw;
+                left: 4.3vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-games{
+                position: absolute;
+                display:inline-block;
+                left: -4vw;
+                width: 10vw;
+                margin-top: 14vw;
+            }
+            .game1{
+                position: absolute;
+                top: 3.91vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game2{
+                position: absolute;
+                top: 8.98vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game3{
+                position: absolute;
+                top: 14.06vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4{
+                position: absolute;
+                top: 19.14vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word {
+                position: absolute;
+                top: 0.51vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive1 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition:0.1s
+            }
+            .games-word-inactive2 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive3 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game-icon{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .game-icon-inactive{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .play-word{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game1:hover .games-word{
+                top: -0.16vw;
+            }
+            .game1:hover .play-word{
+                opacity: 1;
+            }
+            .game1:hover {
+                cursor: pointer;
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+            }
+            .play-word2{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game2:hover .games-word-inactive1{
+                top: -0.16vw;
+            }
+            .game2:hover .play-word2{
+                opacity: 1;
+            }
+            .game2:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .play-word3{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .play-word4{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4:hover .games-word-inactive3{
+                top: -0.16vw;
+            }
+            .game4:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .game4:hover .play-word4{
+                opacity: 1;
+            }
+            .game3:hover .play-word3{
+                opacity: 1;
+            }
+            .game3:hover .games-word-inactive2{
+                top: -0.16vw;
+            }
+            .game3:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .abt-me-desc {
+                z-index: 100;
+                background-color: #00bfff00;
+                position: absolute;
+                top: 4.5vw;
+                left: 25vw;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+
+            }
+            .dream-image {
+                position: relative;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+            }
+            .logo-me-image{
+                position: relative;
+                height: 11.72vw;
+                display: inline-block;
+                width: 23.44vw;
+                border-radius: 0.59vw;
+                filter: invert(100%);
+                top: -21.53vw;
+                left: -3.91vw;
+            }
+            .description-of-me{
+                position: relative;
+                top: -25.44vw;
+                left: 3.71vw;
+                color: white;
+                font-size: 0.78vw;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .top-elements {
+                background-color: transparent;
+                opacity:1;
+            }
+            .left-tab-transparent {
+                z-index: -1;
+                position: absolute;
+                height:100vw;
+                background-color: #151516;
+                width:23.45vw;
+                opacity: 0;
+                border: none;
+            }
+            .top-bar-transparent {
+                z-index: -1;
+                position: absolute;
+                height:3.3vw;
+                background-color: #151516;
+                width:100vw;
+                opacity: 0;
+                border: none;
+            }
+            .interests {
+                display: inline-block;
+                background-color: #282929ad;
+                position: absolute;
+                top: 37.5vw;
+                left: 25vw;
+                width: 72.3vw;
+                height: 10.4vw;
+                border-radius: 0.5vw;
+
+            }
+            .tabs-music-taste:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+            .images-head {
+                display: inline-block;
+                position: relative;
+                width: 8vw;
+                height: 10vw;
+                margin-top: 0.1vw;
+                margin-left: 0.3vw;
+                background-position: -10px, -10px;
+                border-radius: 0.5vw;
+                transition:0.1s;
+            }
+            .images-body {
+                display: inline-block;
+                position: relative;
+                margin-left: 0.9vw;
+                width: 8vw;
+                height: 10vw;
+                background-size: auto;
+                transition:0.1s;
+                border-radius: 0.5vw;
+            }
+            .na{
+                position: absolute;
+                font-size: 0.7vw;
+                top:0.5vw;
+                left:36vw;
+                width:10vw;
+                color: rgb(139, 139, 139);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:0;
+            }
+            .top-mid-left:hover .na{
+                opacity:1;
+            }
+            .discover{
+                position: relative;
+                top: 30.9vw;
+                left: 26.5vw;
+                color: white;
+                font-size: 1vw;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <button class = "left-tab-transparent"></button>
+        <button class = "top-bar-transparent"></button>
+        <div class = "top-elements">
+            <div class = "top-left">
+                <img class = "logo" src = "images/epiclogo.png">
+            </div>
+            <div class = "top-mid-left">
+                <button class = "arrow"> <strong>&#10094</strong> </button>
+                <input class = "search-bar", type = "text", placeholder=" &#x1F50E&#xFE0E Search store">
+                <button class = "category-top"> <strong>Discover</strong> </button>
+                <button class = "category-browse"> <strong>Browse</strong> </button>
+                <button class = "category-top-inactive"> <strong>News</strong> </button>
+                <button class = "category-top-right1-inactive"> <strong>Wishlist</strong> </button>
+                <button class = "category-top-right-inactive"> <strong>Cart</strong> </button>
+                <button class = "cart-count"> <strong>67</strong> </button>
+                <div class="vertical-line"></div>
+                <button class = "friend-count"> <img class = "friend" src = "images/Friend.png"> <strong>67</strong> </button>
+                <button class = "status"> JZ<button class = "online"> </button></button>
+                <p class="na">Top Elements Don't Work</p>
+            </div>
+        </div>
+        <div class = "left-tabs">
+            <button class = "tabs-about-me"><img class = "pfp-tab" src = "images/ProfilePic.jpg"><p class = "about-me-word">About Me</p></button>  
+        </div>
+        <div class = "left-tabs-music">
+            <button class = "tabs-music-taste"><img class = "music-tab" src = "images/spotify-2-logo-png-transparent.png"><p class = "music-taste-word">My Music Taste</p> </button> 
+        </div>
+        <div class = "left-tabs-other">
+            <button class = "tabs-music-taste"><img class = "music-tab" src = "images/Blade_Storm.webp"><p class = "music-taste-word">Other Things</p></button>  
+        </div>
+        <div class = "left-tabs-launch">
+            <button class = "launch-word">Quick Launch Clips</button> 
+        </div>
+        <div class = "left-tabs-games">
+            <a href="https://drive.google.com/file/d/1LkQOBwLMGr9NKmHQ6MHeLPVB-O85lxxH/view?usp=sharing" target="_blank">
+            <button class = "game1"><img class = "game-icon" src = "images/val.jpg"> <p class = "games-word">Valorant</p> <p class = "play-word">&#9654 Launch</p></button> 
+            </a>
+            <a href="https://drive.google.com/file/d/1IK2WeoAfg7w5-BKYMVk3HyOkP1kru1b8/view?usp=sharing" target="_blank">
+                <button class = "game2"><img class = "game-icon-inactive" src = "images/peak-1750699534248.jpg"> <p class = "games-word-inactive1">Peak</p><p class = "play-word2">&#9654 Launch</p></button>
+            </a>
+            <a href="https://drive.google.com/file/d/1EFzrcQvVktb-DO2qzh670M4jHWtcB_OA/view?usp=sharing" target="_blank">
+            <button class = "game3"><img class = "game-icon-inactive" src = "images/Rocket_League_cover.png"> <p class = "games-word-inactive2">Rocket League</p><p class = "play-word3">&#9654 Launch</p></button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <button class = "game4"><img class = "game-icon-inactive" src = "images/Minecraft_2024_cover_art.png"> <p class = "games-word-inactive3">Minecraft</p><p class = "play-word4">&#9654 Launch</p></button>
+            </a>
+        </div>
+        <div class = "abt-me-desc">
+            <img class = dream-image src = "images/dreams.png">
+            <img class = logo-me-image src = "images/About-Me-PNG-Isolated-HD.png">
+            <p class = "description-of-me"> <strong>V20.25 Update [Working on patching zoom scales]</strong><br> <br> Hi my name is Justin Zhou (JZ for short), I'm currently 19 and<br>  am a first year in UNSW doing an Actuarial Studies / Comp Sci <br>double degree (Pray for me). As you can tell from the general <br>layout of this website (first time using HTML & CSS :D), I enjoy <br>playing multiplayer games a lot which has inspired me to create<br> this imitation of the Epic Games Launcher. In my spare time I <br>enjoy hanging out with friends whether it be in vcs, games, the <br>ICC or the Karaoke room. Anyways, please enjoy this Epic Games<br> Launcher dupe, you can find more about me by clicking on <br>the tabs on the left. :)</p>
+        </div>
+        <div class = "interests">
+            <div class = "images-head">
+                <img class = "images-head" src = "images/wao.jpg">
+            </div>
+            <img class = "images-body", src = "images/pc1.jpg">
+            <img class = "images-body", src = "images/city.jpg">
+            <img class = "images-body", src = "images/food.jpg">
+            <img class = "images-body", src = "images/cyberpnk.jpg">
+            <img class = "images-body", src = "images/ski.jpg">
+            <img class = "images-body", src = "images/drinks.jpg">
+            <img class = "images-body", src = "images/peak.png">
+        </div>
+        <p class = "discover">Discover More >></p>
+
+    </body>
+</html>
+
