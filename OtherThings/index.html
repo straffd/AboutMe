@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title> JZ's Other Things </title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                padding-top: 0;
+                zoom: 98%;
+                background-image: url('images/gljrwn.jpe');
+                width: 100vw;
+                height: 60vw;
+                background-position: -5vw -4vw;
+                background-color: #171718;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font: Inter,sans-serif;
+                overflow: hidden;
+                object-fit: cover;
+                transform-origin: top left; /* or 0 0; */
+                transform: scale(1);
+            }
+            .logo {
+                width: 3.13vw;
+                margin-left: 9.77vw;
+                display: inline;
+            }
+            .arrow {
+                position:absolute;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #6c6c7d;
+                border: none;
+                top: 1.15vw;
+                left:1.2vw;
+                transition: 0.1s;
+            }
+            .arrow:hover {
+                opacity: 0.8;
+                color: #c8c7ca;
+                cursor: pointer;
+            }
+            .search-bar:hover,.friend-count:hover ,.status:hover{
+                opacity: 0.7;
+                background-color: #b2b2b2;
+                cursor: pointer;
+            }
+            .top-left{
+                display: inline-block;
+            }
+            .top-mid-left{
+                position:absolute;
+                top:0vw;
+                left:23vw;
+                height:3.1vw;
+                width:77vw;
+                background-color: transparent;
+                font: Inter,sans-serif;
+            }
+            .search-bar {
+                position:absolute;
+                top:1.2vw;
+                height: 1.13vw;
+                width: 7.81vw;
+                left: 2.1vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #303037;
+                font-family: sans-serif;
+                font-weight: 200;
+                color: rgb(255, 255, 255);
+                padding-left: 0.16vw;
+                outline: 0;
+                transition: 0.1s;
+            }
+            .category-top {
+                position: absolute;
+                top:1.26vw;
+                left: 11vw;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #ffffff;
+                border: none;
+                font-family:Arial, Helvetica, sans-serif
+            }
+            .category-top-inactive {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 18.2vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-browse {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 15vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-inactive:hover,.category-top-right1-inactive:hover, .category-top-right-inactive:hover, .category-browse:hover{
+                opacity: 0.8;
+                color: #ffffff;
+                cursor: pointer;
+                padding-bottom: 0.5vw;
+            }
+            .category-top-right1-inactive {
+                position: absolute;
+                background-color: transparent;
+                font-size: 0.74vw;
+                color: #72717a;
+                border: none;
+                top:1.3vw;
+                left: 59.9vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-right-inactive {
+                background-color: transparent;
+                position: absolute;
+                font-size: 0.74vw;
+                color: #6c6b74;
+                border: none;
+                top:1.3vw;
+                left:63.5vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .cart-count {
+                position: absolute;
+                left: 65.8vw;
+                top:1.2vw;
+                height: 0.98vw;
+                width: 1.56vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #00bfff;
+            }
+            .vertical-line {
+                position:absolute;
+                width: 0.08vw;
+                height: 1.17vw; 
+                background-color: #52515a; 
+                display: inline-block;
+                left:68.5vw;
+                top:1.1vw;
+            }
+            .friend-count {
+                position: absolute;
+                height: 1.56vw;
+                width: 2.34vw;
+                top:0.9vw;
+                left:69.5vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #414141;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+                padding-left: 1vw;  
+            }
+            .friend{
+                width: 0.78vw;
+                position: absolute;
+                left:0.34vw;
+                top:0.35vw;
+                display: inline;
+            }
+            .status {
+                position:absolute;
+                top:0.7vw;
+                left:72.5vw;
+                height: 1.95vw;
+                vertical-align: 1.05vw;
+                width: 1.95vw;
+                border-radius: 0.98vw;
+                border: none;
+                font-size: 0.98vw;
+                line-height: 1em;
+                padding: 0;
+                background-color: #6c6b7447;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+            }
+            .online {
+                position: absolute;
+                z-index: 10;
+                width: 0.4vw;
+                height: 0.4vw;
+                border: none;
+                top:2.1vw;
+                left:74vw;
+                background-color: rgb(2, 254, 2);
+                border-radius: 0.2vw;
+            }
+            .left-tabs{
+                display:inline-block
+            }
+            .tabs-about-me {
+                position: absolute;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: #6c6b7400;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .pfp-tab {
+                width: 3.13vw;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+            }
+            .about-me-word {
+                position: absolute;
+                top: 0.51vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-music{
+                position: absolute;
+                display:inline-block;
+                margin-top: 4.69vw;
+            }
+            .tabs-about-me:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+
+            
+            .tabs-music-taste {
+                position: absolute;
+                margin-top: 1.05vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: transparent;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .tabs-other-things {
+                position: absolute;
+                margin-top: 1vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: #6c6b7447;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .music-tab {
+                width: 3.91vw;
+                zoom: 80%;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+
+            }
+            
+            .music-taste-word {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-other{
+                position: absolute;
+                display:inline-block;
+                margin-top: 8.98vw;
+            }
+            .left-tabs-launch{
+                position: absolute;
+                display:inline-block;
+                left: -3.52vw;
+                margin-top: 12.89vw;
+            }
+            .launch-word {
+                position: absolute;
+                top: 2.15vw;
+                width: 21.48vw;
+                left: 4.3vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-games{
+                position: absolute;
+                display:inline-block;
+                left: -4vw;
+                width: 10vw;
+                margin-top: 14vw;
+            }
+            .game1{
+                position: absolute;
+                top: 3.91vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game2{
+                position: absolute;
+                top: 8.98vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game3{
+                position: absolute;
+                top: 14.06vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4{
+                position: absolute;
+                top: 19.14vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word {
+                position: absolute;
+                top: 0.51vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive1 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition:0.1s
+            }
+            .games-word-inactive2 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive3 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game-icon{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .game-icon-inactive{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .play-word{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game1:hover .games-word{
+                top: -0.16vw;
+            }
+            .game1:hover .play-word{
+                opacity: 1;
+            }
+            .game1:hover {
+                cursor: pointer;
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+            }
+            .play-word2{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game2:hover .games-word-inactive1{
+                top: -0.16vw;
+            }
+            .game2:hover .play-word2{
+                opacity: 1;
+            }
+            .game2:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .play-word3{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .play-word4{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4:hover .games-word-inactive3{
+                top: -0.16vw;
+            }
+            .game4:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .game4:hover .play-word4{
+                opacity: 1;
+            }
+            .game3:hover .play-word3{
+                opacity: 1;
+            }
+            .game3:hover .games-word-inactive2{
+                top: -0.16vw;
+            }
+            .game3:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .abt-me-desc {
+                z-index: 100;
+                background-color: #00bfff00;
+                position: absolute;
+                top: 4.5vw;
+                left: 25vw;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+
+            }
+            .dream-image {
+                position: relative;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+            }
+            .logo-me-image{
+                position: relative;
+                height: 11.72vw;
+                display: inline-block;
+                width: 23.44vw;
+                border-radius: 0.59vw;
+                filter: invert(100%);
+                top: -19.53vw;
+                left: -3.91vw;
+            }
+            .description-of-me{
+                position: relative;
+                top: -23.44vw;
+                left: 3.71vw;
+                color: white;
+                font-size: 0.78vw;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .top-elements {
+                background-color: transparent;
+                opacity:1;
+            }
+            .left-tab-transparent {
+                z-index: -1;
+                position: absolute;
+                height:100vw;
+                background-color: #151516;
+                width:23.45vw;
+                opacity: 0;
+                border: none;
+            }
+            .top-bar-transparent {
+                z-index: -1;
+                position: absolute;
+                height:3.3vw;
+                background-color: #151516;
+                width:100vw;
+                opacity: 0;
+                border: none;
+            }
+            .spotify-list {
+                position:absolute;
+                top: 4.5vw;
+                width: 74vw;
+                left: 24.6vw;
+                height: 33vw;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .spotify-profile {
+                position:absolute;
+                top: 37vw;
+                width: 22vw;
+                left: 24.6vw;
+                height: 10vw;
+                background-color: #00bfff00;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .spotify-profile:hover{
+                position:absolute;
+                top: 36.9vw;
+                width: 23vw;
+                left: 24.3vw;
+                height: 10.2vw;
+                background-color: #00bfff00;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .spotify-jamming {
+                position:absolute;
+                top: 37vw;
+                width: 48.7vw;
+                left: 50vw;
+                height: 10vw;
+                background-color: #31333400;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .transparent-center{
+                z-index: -20;
+                border-radius: 1vw;
+                position: absolute;
+                top: 3.5vw;
+                border: transparent;
+                width: 75.3vw;
+                height: 44.3vw;
+                left: 24vw;
+                background-color: #222425;
+                opacity: 0.9;
+            }
+            .what-im-jamming-word{
+                position:absolute;
+                top: 37vw;
+                font-size: 0.8vw;
+                color: white;
+                left: 59vw;
+                border: none;
+                border-radius: 1.5vw;
+                font-family: "Montserrat"
+            }
+            .find-me{
+                opacity: 1;
+                position:absolute;
+                top: 37vw;
+                font-size: 1vw;
+                color: white;
+                left: 35vw;
+                border: none;
+                border-radius: 1.5vw;
+                font-family: "Montserrat";
+                transition:0.1s;
+            }
+            .top-courses-taken{
+                position:absolute;
+                height: 13vw;
+                width: 55vw;
+                top:4vw;
+                left:33vw;
+                background-color: rgb(39, 41, 41);
+            }
+            .left-image {
+                height: 13vw;
+                width: 27vw;
+            }
+            .right-text {
+                position:absolute;
+                top:0vw;
+                left:28.3vw;
+                height: 13vw;
+                width: 27vw;
+                color: white;
+                font-size: 1.2vw;
+                font-family: "Montserrat";
+            }
+            .courses-text {
+                position:absolute;
+                top:2.7vw;
+                left:29vw;
+                height: 13vw;
+                width: 27vw;
+                color: white;
+                font-size: 0.9vw;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                line-height: 1.5vw;
+            }
+            .tabs-music-taste:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+            .courses-text-left {
+                position:absolute;
+                top:2.7vw;
+                left:41vw;
+                height: 13vw;
+                width: 27vw;
+                color: white;
+                font-size: 0.9vw;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                line-height: 1.5vw;
+            }
+            .wam {
+                position:absolute;
+                top:9vw;
+                left:39vw;
+                height: 13vw;
+                width: 27vw;
+                color: white;
+                font-size: 0.9vw;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                line-height: 1.5vw;
+            }
+            
+            .na{
+                position: absolute;
+                font-size: 0.7vw;
+                top:0.5vw;
+                left:36vw;
+                width:10vw;
+                color: rgb(139, 139, 139);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:0;
+            }
+            .top-mid-left:hover .na{
+                opacity:1;
+            }
+            .features{
+                position: absolute;
+                font-size: 0.9vw;
+                top:17vw;
+                left:33vw;
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:1;
+            }
+            .food{
+                position: absolute;
+                font-size: 0.9vw;
+                top:17vw;
+                left:74vw;
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:1;
+            }
+            .horizontal-line-content{
+                position: absolute;
+                top:19.3vw;
+                left:33vw;
+                height:0.08vw;
+                width:39vw;
+                background-color: #ffffff;
+            }
+            .horizontal-line-food{
+                position: absolute;
+                top:19.3vw;
+                left:74vw;
+                height:0.08vw;
+                width:14vw;
+                background-color: #ffffff;
+            }
+            .horizontal-line-colour{
+                position: absolute;
+                top:34.35vw;
+                left:74vw;
+                height:0.08vw;
+                width:14vw;
+                background-color: #ffffff;
+            }
+            .favourite-food{
+                position: absolute;
+                font-size: 0.9vw;
+                top:20.5vw;
+                left:74vw;
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:1;
+            }
+            .fav-food-img{
+                width:14vw;
+                height: 11vw;
+            }
+            .fav-food-desc{
+                position: absolute;
+                font-size: 0.6vw;
+                top:-0.3vw;
+                left:1vw;
+                color: rgb(255, 255, 255);
+                font-family: "Montserrat";
+            }
+            .transparent-food{
+                position: absolute;
+                font-size: 0.8vw;
+                opacity:0.9;
+                top:9.7vw;
+                left:0vw;
+                height:1.3vw;
+                width:14vw;
+                background-color: #090909;
+                border:none;
+            }
+            .external-food-link {
+                position: absolute;
+                height:1vw;
+                width:1vw;
+                top:0.1vw;
+                left:12.7vw;
+                color: rgb(255, 255, 255);
+            }
+            .hori-line {
+                position: absolute;
+                height:0.03vw;
+                width:9.5vw;
+                top:1.1vw;
+                left:0.8vw;
+                background-color: rgb(254, 254, 254);
+                opacity:0;
+                transition: 0.09s;
+            }
+            .transparent-food:hover .hori-line{
+                opacity:1;
+            }
+            .fav-colour{
+                position: absolute;
+                font-size: 0.9vw;
+                top:32vw;
+                left:74vw;
+                color: rgb(255, 255, 255);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:1;
+            }
+            .social-section{
+                position: absolute;
+                top: 20vw;
+                left: 33vw;
+                background-color: rgb(39, 41, 41);
+                height: 21vw;
+                width:19vw;
+            }
+            .project-section{
+                position: absolute;
+                top: 20vw;
+                left: 53vw;
+                background-color: rgb(39, 41, 41);
+                height: 21vw;
+                width:19vw;
+            }
+            .purple-section{
+                position: absolute;
+                top: 36vw;
+                left: 74vw;
+                background-color: rgba(140, 0, 255, 0);
+                height: 12vw;
+                width:14vw;
+            }
+            .external-colour-link {
+                position: absolute;
+                z-index: 100;
+                height:1vw;
+                width:1vw;
+                top:0.2vw;
+                left:12.7vw;
+                color: rgb(255, 255, 255);
+            }
+            .transparent-colour{
+                position: absolute;
+                font-size: 0.8vw;
+                opacity:0.9;
+                top:10.7vw;
+                left:0vw;
+                height:1.3vw;
+                width:14vw;
+                background-color: #090909;
+                border:none;
+            }
+            .fav-colour-desc{
+                position: absolute;
+                z-index: 100;
+                font-size: 0.6vw;
+                top:-0.3vw;
+                left:1vw;
+                color: rgb(255, 255, 255);
+                font-family: "Montserrat";
+            }
+            .hori-line2 {
+                position: absolute;
+                height:0.03vw;
+                width:5.3vw;
+                top:1.1vw;
+                left:0.9vw;
+                background-color: rgb(254, 254, 254);
+                opacity:0;
+                transition: 0.09s;
+            }
+            .transparent-colour:hover .hori-line2{
+                opacity: 1;
+            }
+            .transparent-colour:hover .external-colour-link{
+                height:1.05vw;
+                width:1.05vw;
+                top:0.15vw;
+                left:12.65vw;
+                color: rgb(255, 255, 255);
+            }
+            .transparent-food:hover .external-food-link{
+                height:1.05vw;
+                width:1.05vw;
+                top:0.15vw;
+                left:12.65vw;
+                color: rgb(255, 255, 255);
+            }
+            .featured-content-png{
+                height:9vw;
+                width:19vw;
+            }
+            .my-socials{
+                position:absolute;
+                top:8.6vw;
+                left:1vw;
+                font-size: 0.8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .hobby-text{
+                position:absolute;
+                top:8.6vw;
+                left:1vw;
+                font-size: 0.8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .fb-button{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:11vw;
+                left:1vw;
+                border-radius: 1vw;;
+                background-color: transparent;
+                border: none;
+            }
+            .fb-img{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                left: 0vw;
+                top: 0vw;
+                border-radius: 1vw;;
+                transition:0.1s;
+            }
+            .gram-button{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:13vw;
+                left:1vw;
+                border-radius: 1vw;;
+                background-color: transparent;
+                border: none;
+            }
+            .gram-img{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:0vw;
+                left:0vw;
+                border-radius: 1vw;
+                transition:0.1s;
+            }
+            .dc-button{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:17vw;
+                left:1vw;
+                border-radius: 1vw;;
+                background-color: transparent;
+                border: none;
+            }
+            .dc-img{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:0vw;
+                left:0vw;
+                border-radius: 1vw;
+                transition:0.1s;
+            }
+            .spotify-button{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:15vw;
+                left:1vw;
+                border-radius: 1vw;;
+                background-color: transparent;
+                border: none;
+                
+            }
+            .spotify-img{
+                position:absolute;
+                height:1.5vw;
+                width:1.5vw;
+                top:0vw;
+                left:0vw;
+                border-radius: 1vw;
+                transition:0.1s;
+            }
+            .fb-button:hover .fb-img{
+                height:2vw;
+                width:2vw;
+                top:-0.25vw;
+                left:-0.25vw;
+            }
+            .gram-button:hover .gram-img{
+                height:2vw;
+                width:2vw;
+                top:-0.25vw;
+                left:-0.25vw;
+            }
+
+            .spotify-button:hover .spotify-img{
+                height:2vw;
+                width:2vw;
+                top:-0.25vw;
+                left:-0.25vw;
+            }
+            .fb-text{
+                position:absolute;
+                top:-0.5vw;
+                left:1.0vw;
+                font-size: 0.8vw;
+                width: 8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .gram-text{
+                position:absolute;
+                top:-0.5vw;
+                left:-0.2vw;
+                font-size: 0.8vw;
+                width: 8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .dc-text{
+                position:absolute;
+                top:-0.5vw;
+                left:0vw;
+                font-size: 0.8vw;
+                width: 8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .spotify-text{
+                position:absolute;
+                top:-0.5vw;
+                left:-0.9vw;
+                font-size: 0.8vw;
+                width: 8vw;
+                color: white;
+                font-family: "Montserrat";
+            }
+            .hobbies-text {
+                position:absolute;
+                top:9.7vw;
+                left: 1vw;
+                height: 13vw;
+                width: 10vw;
+                color: white;
+                font-size: 0.8vw;
+                font-family:"Montserrat";
+                line-height: 1.5vw;
+            }
+            .hobbies-right-text {
+                position:absolute;
+                top:9.7vw;
+                left: 10vw;
+                height: 13vw;
+                width: 10vw;
+                color: white;
+                font-size: 0.8vw;
+                font-family:"Montserrat";
+                line-height: 1.5vw;
+            }
+            .secret{
+                position:absolute;
+                top:42.5vw;
+                left:49.5vw;
+                width:6vw;
+                height:6vw;
+                border: none;
+                border-radius: 2vw;
+                background-color: transparent;
+            }
+            .panda {
+                width:6vw;
+                height:6vw;
+            }
+            .secret:hover .panda{
+                position:absolute;
+                top:-0.1vw;
+                left:-0.1vw;
+                width:6.5vw;
+                height:6.5vw;
+                cursor: pointer;
+            }
+            .secret:active .panda{
+                visibility: hidden;
+            }
+            
+            .transparent-center{
+                z-index: -20;
+                border-radius: 0.5vw;
+                position: absolute;
+                top: 3.5vw;
+                border: transparent;
+                width: 78vw;
+                height: 60vw;
+                left: 23vw;
+                background-color: #222425;
+                opacity: 0.3;
+            }
+            .purpd{
+                width:14vw;
+                height:12vw;
+                left:-1vw;
+            }
+        </style>
+    </head>
+    <body>
+        <button class = "left-tab-transparent"></button>
+        <button class = "top-bar-transparent"></button>
+        <div class = "top-elements">
+            <div class = "top-left">
+                <img class = "logo" src = "images/epiclogo.png">
+            </div>
+            <div class = "top-mid-left">
+                <button class = "arrow"> <strong>&#10094</strong></button>
+                <input class = "search-bar", type = "text", placeholder=" &#x1F50E&#xFE0E Search store">
+                <button class = "category-top"> <strong>Discover</strong> </button>
+                <button class = "category-browse"> <strong>Browse</strong> </button>
+                <button class = "category-top-inactive"> <strong>News</strong> </button>
+                <button class = "category-top-right1-inactive"> <strong>Wishlist</strong> </button>
+                <button class = "category-top-right-inactive"> <strong>Cart</strong> </button>
+                <button class = "cart-count"> <strong>67</strong> </button>
+                <div class="vertical-line"></div>
+                <button class = "friend-count"> <img class = "friend" src = "images/Friend.png"> <strong>67</strong> </button>
+                <button class = "status"> JZ<button class = "online"> </button></button>
+                <p class="na">Top Elements Don't Work</p>
+            </div>
+        </div>
+        <div class = "left-tabs">
+            <a href="https://straffd.github.io/AboutMe/" target="_self">
+                <button class = "tabs-about-me"><img class = "pfp-tab" src = "images/ProfilePic.jpg"><p class = "about-me-word">About Me</p></button>  
+            </a>
+        </div>
+        <div class = "left-tabs-music">
+            <a href="https://straffd.github.io/MusicTaste/" target="_self">
+                <button class = "tabs-music-taste"><img class = "music-tab" src = "images/spotify-2-logo-png-transparent.png"><p class = "music-taste-word">My Music Taste</p> </button> 
+            </a>
+        </div>
+        <div class = "left-tabs-other">
+            <button class = "tabs-other-things"><img class = "music-tab" src = "images/Blade_Storm.webp"><p class = "music-taste-word">Other Things</p></button>  
+        </div>
+        <div class = "left-tabs-launch">
+            <button class = "launch-word">Quick Launch Clips</button> 
+        </div>
+        <div class = "left-tabs-games">
+            <a href="https://drive.google.com/file/d/1LkQOBwLMGr9NKmHQ6MHeLPVB-O85lxxH/view?usp=sharing" target="_blank">
+            <button class = "game1"><img class = "game-icon" src = "images/val.jpg"> <p class = "games-word">Valorant</p> <p class = "play-word">&#9654 Launch</p></button> 
+            </a>
+            <a href="https://drive.google.com/file/d/1IK2WeoAfg7w5-BKYMVk3HyOkP1kru1b8/view?usp=sharing" target="_blank">
+                <button class = "game2"><img class = "game-icon-inactive" src = "images/peak-1750699534248.jpg"> <p class = "games-word-inactive1">Peak</p><p class = "play-word2">&#9654 Launch</p></button>
+            </a>
+            <a href="https://drive.google.com/file/d/1EFzrcQvVktb-DO2qzh670M4jHWtcB_OA/view?usp=sharing" target="_blank">
+            <button class = "game3"><img class = "game-icon-inactive" src = "images/Rocket_League_cover.png"> <p class = "games-word-inactive2">Rocket League</p><p class = "play-word3">&#9654 Launch</p></button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <button class = "game4"><img class = "game-icon-inactive" src = "images/Minecraft_2024_cover_art.png"> <p class = "games-word-inactive3">Minecraft</p><p class = "play-word4">&#9654 Launch</p></button>
+            </a>
+        </div>
+        <div class = "top-courses-taken">
+            <img class = "left-image", src = "images/unistuff.png">
+            <p class = "right-text"><strong>My Completed UNI Courses</strong></p>
+            <p class = "courses-text">&#9824 Comp1511 <br>&#9830 Math1151<br> &#9829 Comm1140 <br>&#9827 Actl1101 <br>&#9828 Comp1521</p>
+            <p class = "courses-text-left">&#9826 Math1251<br> &#9825 Actl2131 (25T3) <br> &#9831 Comm1170 (25T3)<br> &#9826 Comp1531 (25T3)</p>
+            
+        </div>
+         <p class = "features"><strong>Featured Content</strong></p>
+         <p class = "food"><strong>Favourite Food</strong></p>
+         <div class="horizontal-line-content"></div>
+         <div class="horizontal-line-food"></div>
+         <div class="horizontal-line-colour"></div>
+         <div class = "favourite-food"> 
+            <img class = "fav-food-img" src = "images/favfood.png">
+            <a href="https://www.instagram.com/hotclucker/?hl=en" target="_blank">
+                <button class = "transparent-food">
+                    <p class = "fav-food-desc">Hot Cluckers North Strathfield </p>
+                    <img class = "external-food-link" src = "images/external.png">
+                    <div class = "hori-line"></div>
+                </button></div>
+            </a>
+            <p class = "fav-colour"><strong>Favourite Colour</strong></p>
+        <div class="social-section">
+            <img class = "featured-content-png" src = "images/some-3d-social-media-icons.avif">
+            <p class = "my-socials"><strong>Social Links</strong></p>
+            <a href="https://www.facebook.com/justin.zhou.849436/" target="_blank">
+            <button class = "fb-button">
+                <img class = "fb-img" src = "images/fb.png">    
+                <p class = "fb-text">@Justin Zhou</p>
+            </button>
+            </a>
+            <a href="https://www.instagram.com/jjystn/" target="_blank">
+            <button class = "gram-button">
+                <img class = "gram-img" src = "images/gram.png">
+                <p class = "gram-text">@Jjystn</p>   
+            </button>
+            </a>
+            <a href="https://open.spotify.com/user/taj94asnmxkorro90830jmjug?si=fff07f317cf146fb" target="_blank">
+            <button class= "spotify-button">
+                <img class = "spotify-img" src = "images/spotify-2-logo-png-transparent.png">   
+                <p class = "spotify-text">@Jz</p>  
+            </button>   
+            <button class = "dc-button">
+                <img class = "dc-img" src = "images/discord.png">
+                 <p class = "dc-text">@Straffd</p>   
+            </button>
+            </a>
+        </div>
+        <div class="project-section">
+            <img class = "featured-content-png" src = "images/Screenshot 2025-09-11 012844.png">
+            <p class = "hobby-text"><strong>My Interests/Hobbies</strong> </p>
+            <p class = "hobbies-text">&#9729 Ice Skating <br> &#9729 Skiing <br> &#9729 Co-op Games <br> &#9729 Camp/Road Trips <br> &#9729 Food <br> &#9729 Bouldering (Giga Casual)</p>
+            <p class = "hobbies-right-text">&#9729 Valorant<br> &#9729 Bed Rotting<br> &#9729 Sleeping <br> &#9729 Music <br> &#9729 ESTP</p>
+        </div>
+        <div class ="purple-section">
+            <img class = "purpd" src = "images/purpd.jpg">
+            <a href="https://en.wikipedia.org/wiki/Purple" target="_blank">
+            <button class = "transparent-colour">
+                <p class = "fav-colour-desc">Purple #800080</p>
+                <img class = "external-colour-link" src = "images/external.png">
+                <div class = "hori-line2"></div>
+            </button>
+            </a>
+        </div>
+        <button class = "secret">
+            <img class = "panda" src = "images/panda.png">
+        </button>
+        <img class = "transparent-center", src = "images/dreams.png">
+    </body>
+</html>
+
