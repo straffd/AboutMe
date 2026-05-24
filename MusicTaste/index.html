@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title> JZ's Music Taste </title>
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                padding-top: 0;
+                zoom: 98%;
+                background-image: url('images/gljrwn.jpe');
+                width: 100vw;
+                height: 60vw;
+                background-position: -5vw -4vw;
+                background-color: #171718;
+                background-repeat: no-repeat;
+                background-size: cover;
+                font: Inter,sans-serif;
+                overflow: hidden;
+                object-fit: cover;
+                transform-origin: top left; /* or 0 0; */
+                transform: scale(1);
+            }
+            .logo {
+                width: 3.13vw;
+                margin-left: 9.77vw;
+                display: inline;
+            }
+            .arrow {
+                position:absolute;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #6c6c7d;
+                border: none;
+                top: 1.15vw;
+                left:1.2vw;
+                transition: 0.1s;
+            }
+            .arrow:hover {
+                opacity: 0.8;
+                color: #c8c7ca;
+                cursor: pointer;
+            }
+            .search-bar:hover,.friend-count:hover ,.status:hover{
+                opacity: 0.7;
+                background-color: #b2b2b2;
+                cursor: pointer;
+            }
+            .top-left{
+                display: inline-block;
+            }
+            .top-mid-left{
+                position:absolute;
+                top:0vw;
+                left:23vw;
+                height:3.1vw;
+                width:77vw;
+                background-color: transparent;
+                font: Inter,sans-serif;
+            }
+            .search-bar {
+                position:absolute;
+                top:1.2vw;
+                height: 1.13vw;
+                width: 7.81vw;
+                left: 2.1vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #303037;
+                font-family: sans-serif;
+                font-weight: 200;
+                color: rgb(255, 255, 255);
+                padding-left: 0.16vw;
+                outline: 0;
+                transition: 0.1s;
+            }
+            .category-top {
+                position: absolute;
+                top:1.26vw;
+                left: 11vw;
+                background-color: transparent;
+                font-size: 0.78vw;
+                color: #ffffff;
+                border: none;
+                font-family:Arial, Helvetica, sans-serif
+            }
+            .category-top-inactive {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 18.2vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-browse {
+                background-color: transparent;
+                position: absolute;
+                top:1.3vw;
+                left: 15vw;
+                font-size: 0.74vw;
+                color: #52515a;
+                border: none;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-inactive:hover,.category-top-right1-inactive:hover, .category-top-right-inactive:hover, .category-browse:hover{
+                opacity: 0.8;
+                color: #ffffff;
+                cursor: pointer;
+                padding-bottom: 0.5vw;
+            }
+            .category-top-right1-inactive {
+                position: absolute;
+                background-color: transparent;
+                font-size: 0.74vw;
+                color: #72717a;
+                border: none;
+                top:1.3vw;
+                left: 59.9vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .category-top-right-inactive {
+                background-color: transparent;
+                position: absolute;
+                font-size: 0.74vw;
+                color: #6c6b74;
+                border: none;
+                top:1.3vw;
+                left:63.5vw;
+                font-family: sans-serif;
+                transition: 0.1s;
+            }
+            .cart-count {
+                position: absolute;
+                left: 65.8vw;
+                top:1.2vw;
+                height: 0.98vw;
+                width: 1.56vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #00bfff;
+            }
+            .vertical-line {
+                position:absolute;
+                width: 0.08vw;
+                height: 1.17vw; 
+                background-color: #52515a; 
+                display: inline-block;
+                left:68.5vw;
+                top:1.1vw;
+            }
+            .friend-count {
+                position: absolute;
+                height: 1.56vw;
+                width: 2.34vw;
+                top:0.9vw;
+                left:69.5vw;
+                border-radius: 0.78vw;
+                border: none;
+                font-size: 0.59vw;
+                background-color: #414141;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+                padding-left: 1vw;  
+            }
+            .friend{
+                width: 0.78vw;
+                position: absolute;
+                left:0.34vw;
+                top:0.35vw;
+                display: inline;
+            }
+            .status {
+                position:absolute;
+                top:0.7vw;
+                left:72.5vw;
+                height: 1.95vw;
+                vertical-align: 1.05vw;
+                width: 1.95vw;
+                border-radius: 0.98vw;
+                border: none;
+                font-size: 0.98vw;
+                line-height: 1em;
+                padding: 0;
+                background-color: #6c6b7447;
+                font:900;
+                color: #ffffff;
+                transition: 0.1s;
+            }
+            .online {
+                position: absolute;
+                z-index: 10;
+                width: 0.4vw;
+                height: 0.4vw;
+                border: none;
+                top:2.1vw;
+                left:74vw;
+                background-color: rgb(2, 254, 2);
+                border-radius: 0.2vw;
+            }
+            .left-tabs{
+                display:inline-block
+            }
+            .tabs-about-me {
+                position: absolute;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: #6c6b7400;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .pfp-tab {
+                width: 3.13vw;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+            }
+            .about-me-word {
+                position: absolute;
+                top: 0.51vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-music{
+                position: absolute;
+                display:inline-block;
+                margin-top: 4.69vw;
+            }
+            .tabs-other-things:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+            .tabs-about-me:hover {
+                opacity: 0.8;
+                background-color: #6c6b7447;
+                cursor: pointer;
+                font-size: 0.98vw;
+                margin-top: 0.78vw;
+                width: 22.9vw;
+                height: 4.3vw;
+            }
+
+            
+            .tabs-music-taste {
+                position: absolute;
+                margin-top: 1.05vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: #6c6b7447;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .tabs-other-things {
+                position: absolute;
+                margin-top: 1vw;
+                width: 22.9vw;
+                height: 3.91vw;
+                display: inline-block;
+                border: none;
+                color: white;
+                font-size: 0.98vw;
+                background-color: transparent;
+                border-radius: 0.59vw;
+                text-align: left;
+                line-height: 1em;
+            }
+            .music-tab {
+                width: 3.91vw;
+                zoom: 80%;
+                margin-left: 0.78vw;
+                display: inline;
+                border-radius: 20%;
+
+            }
+            
+            .music-taste-word {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 5.27vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-other{
+                position: absolute;
+                display:inline-block;
+                margin-top: 8.98vw;
+            }
+            .left-tabs-launch{
+                position: absolute;
+                display:inline-block;
+                left: -3.52vw;
+                margin-top: 12.89vw;
+            }
+            .launch-word {
+                position: absolute;
+                top: 2.15vw;
+                width: 21.48vw;
+                left: 4.3vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                
+            }
+            .left-tabs-games{
+                position: absolute;
+                display:inline-block;
+                left: -4vw;
+                width: 10vw;
+                margin-top: 14vw;
+            }
+            .game1{
+                position: absolute;
+                top: 3.91vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game2{
+                position: absolute;
+                top: 8.98vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s
+            }
+            .game3{
+                position: absolute;
+                top: 14.06vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4{
+                position: absolute;
+                top: 19.14vw;
+                width: 21.48vw;
+                left: 5.47vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                line-height: 1.17vw;
+                text-align: 1.56vw;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word {
+                position: absolute;
+                top: 0.51vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive1 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.42vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition:0.1s
+            }
+            .games-word-inactive2 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .games-word-inactive3 {
+                position: absolute;
+                top: 0.39vw;
+                width: 7.81vw;
+                left: 3.52vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.98vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game-icon{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .game-icon-inactive{
+                width: 2.93vw;
+                height: 4.3vw;
+                border-radius: 0.59vw;
+                margin-left: -19.53vw;
+            }
+            .play-word{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game1:hover .games-word{
+                top: -0.16vw;
+            }
+            .game1:hover .play-word{
+                opacity: 1;
+            }
+            .game1:hover {
+                cursor: pointer;
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+            }
+            .play-word2{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game2:hover .games-word-inactive1{
+                top: -0.16vw;
+            }
+            .game2:hover .play-word2{
+                opacity: 1;
+            }
+            .game2:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .play-word3{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .play-word4{
+                opacity: 0;
+                position: absolute;
+                top: 1.17vw;
+                width: 7.81vw;
+                left: 3.91vw;
+                background-color: transparent;
+                display: inline-block;
+                border: none;
+                font-size: 0.78vw;
+                text-align: left;
+                color:#bbbbc3;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                transition: 0.1s;
+            }
+            .game4:hover .games-word-inactive3{
+                top: -0.16vw;
+            }
+            .game4:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .game4:hover .play-word4{
+                opacity: 1;
+            }
+            .game3:hover .play-word3{
+                opacity: 1;
+            }
+            .game3:hover .games-word-inactive2{
+                top: -0.16vw;
+            }
+            .game3:hover {
+                height: 4.38vw;
+                width:22.27vw;
+                background-color: #6c6b7447;
+                margin-left: -0.78vw;
+                cursor: pointer;
+            }
+            .abt-me-desc {
+                z-index: 100;
+                background-color: #00bfff00;
+                position: absolute;
+                top: 4.5vw;
+                left: 25vw;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+
+            }
+            .dream-image {
+                position: relative;
+                height: 31vw;
+                display: inline-block;
+                width: 72vw;
+                border-radius: 0.5vw;
+            }
+            .logo-me-image{
+                position: relative;
+                height: 11.72vw;
+                display: inline-block;
+                width: 23.44vw;
+                border-radius: 0.59vw;
+                filter: invert(100%);
+                top: -19.53vw;
+                left: -3.91vw;
+            }
+            .description-of-me{
+                position: relative;
+                top: -23.44vw;
+                left: 3.71vw;
+                color: white;
+                font-size: 0.78vw;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            .top-elements {
+                background-color: transparent;
+                opacity:1;
+            }
+            .left-tab-transparent {
+                z-index: -1;
+                position: absolute;
+                height:100vw;
+                background-color: #151516;
+                width:23.45vw;
+                opacity: 0;
+                border: none;
+            }
+            .top-bar-transparent {
+                z-index: -1;
+                position: absolute;
+                height:3.3vw;
+                background-color: #151516;
+                width:100vw;
+                opacity: 0;
+                border: none;
+            }
+            .spotify-list {
+                position:absolute;
+                top: 4.5vw;
+                width: 74vw;
+                left: 24.6vw;
+                height: 30vw;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .spotify-profile {
+                position:absolute;
+                top: 37vw;
+                width: 22vw;
+                left: 24.6vw;
+                height: 10vw;
+                background-color: #00bfff00;
+                border: none;
+                border-radius: 1.5vw;
+                opacity:1;
+            }
+            .spotify-profile:hover{
+                position:absolute;
+                top: 36.9vw;
+                width: 23vw;
+                left: 24.3vw;
+                height: 10.2vw;
+                background-color: #00bfff00;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .spotify-jamming {
+                position:absolute;
+                top: 37vw;
+                width: 48.7vw;
+                left: 50vw;
+                height: 10vw;
+                background-color: #31333400;
+                border: none;
+                border-radius: 1.5vw;
+            }
+            .transparent-center{
+                z-index: -20;
+                border-radius: 0.5vw;
+                position: absolute;
+                top: 3.5vw;
+                border: transparent;
+                width: 78vw;
+                height: 60vw;
+                left: 23vw;
+                background-color: #222425;
+                opacity: 0.3;
+            }
+            .what-im-jamming-word{
+                position:absolute;
+                top: 37vw;
+                font-size: 0.8vw;
+                color: white;
+                left: 59vw;
+                border: none;
+                border-radius: 1.5vw;
+                font-family: "Montserrat"
+            }
+            .find-me{
+                opacity: 1;
+                position:absolute;
+                top: 37vw;
+                font-size: 1vw;
+                color: white;
+                left: 35vw;
+                border: none;
+                border-radius: 1.5vw;
+                font-family: "Montserrat";
+                transition:0.1s;
+            }
+            .na{
+                position: absolute;
+                font-size: 0.7vw;
+                top:0.5vw;
+                left:36vw;
+                width:10vw;
+                color: rgb(139, 139, 139);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                opacity:0;
+            }
+            .top-mid-left:hover .na{
+                opacity:1;
+            }
+
+        </style>
+    </head>
+    <body>
+        <button class = "left-tab-transparent"></button>
+        <button class = "top-bar-transparent"></button>
+        <div class = "top-elements">
+            <div class = "top-left">
+                <img class = "logo" src = "images/epiclogo.png">
+            </div>
+            <div class = "top-mid-left">
+                <button class = "arrow"> <strong>&#10094</strong> </button>
+                <input class = "search-bar", type = "text", placeholder=" &#x1F50E&#xFE0E Search store">;
+                <button class = "category-top"> <strong>Discover</strong> </button>
+                <button class = "category-browse"> <strong>Browse</strong> </button>
+                <button class = "category-top-inactive"> <strong>News</strong> </button>
+                <button class = "category-top-right1-inactive"> <strong>Wishlist</strong> </button>
+                <button class = "category-top-right-inactive"> <strong>Cart</strong> </button>
+                <button class = "cart-count"> <strong>67</strong> </button>
+                <div class="vertical-line"></div>
+                <button class = "friend-count"> <img class = "friend" src = "images/Friend.png"> <strong>67</strong> </button>
+                <button class = "status"> JZ</button>
+                <div class = "online"></div>
+                <p class="na">Top Elements Don't Work</p>
+            </div>
+        </div>
+        <div class = "left-tabs">
+            <a href="https://straffd.github.io/AboutMe/" target="_self">
+            <button class = "tabs-about-me"><img class = "pfp-tab" src = "images/ProfilePic.jpg"><p class = "about-me-word">About Me</p></button>  
+            </a>
+        </div>
+        <div class = "left-tabs-music">
+            <button class = "tabs-music-taste"><img class = "music-tab" src = "images/spotify-2-logo-png-transparent.png"><p class = "music-taste-word">My Music Taste</p> </button> 
+        </div>
+        <div class = "left-tabs-other">
+            <a href="https://straffd.github.io/OtherThings/" target="_self">
+            <button class = "tabs-other-things"><img class = "music-tab" src = "images/Blade_Storm.webp"><p class = "music-taste-word">Other Things</p></button>  
+            </a>
+        </div>
+        <div class = "left-tabs-launch">
+            <button class = "launch-word">Quick Launch Clips</button> 
+        </div>
+        <div class = "left-tabs-games">
+            <a href="https://drive.google.com/file/d/1LkQOBwLMGr9NKmHQ6MHeLPVB-O85lxxH/view?usp=sharing" target="_blank">
+            <button class = "game1"><img class = "game-icon" src = "images/val.jpg"> <p class = "games-word">Valorant</p> <p class = "play-word">&#9654 Launch</p></button> 
+            </a>
+            <a href="https://drive.google.com/file/d/1IK2WeoAfg7w5-BKYMVk3HyOkP1kru1b8/view?usp=sharing" target="_blank">
+                <button class = "game2"><img class = "game-icon-inactive" src = "images/peak-1750699534248.jpg"> <p class = "games-word-inactive1">Peak</p><p class = "play-word2">&#9654 Launch</p></button>
+            </a>
+            <a href="https://drive.google.com/file/d/1EFzrcQvVktb-DO2qzh670M4jHWtcB_OA/view?usp=sharing" target="_blank">
+            <button class = "game3"><img class = "game-icon-inactive" src = "images/Rocket_League_cover.png"> <p class = "games-word-inactive2">Rocket League</p><p class = "play-word3">&#9654 Launch</p></button>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <button class = "game4"><img class = "game-icon-inactive" src = "images/Minecraft_2024_cover_art.png"> <p class = "games-word-inactive3">Minecraft</p><p class = "play-word4">&#9654 Launch</p></button>
+            </a>
+        </div>
+        <div class = "spotify-list">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2RwmqDEhVChyLA3k0OWJmC?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div>
+            <a href="https://open.spotify.com/user/taj94asnmxkorro90830jmjug?si=10e352dea8e04f1b" target="_blank">
+                <img class = "spotify-profile" src = "images/spotifypfp.png">
+            </a>
+        </div>
+        <iframe class = "spotify-list" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2RwmqDEhVChyLA3k0OWJmC?utm_source=generator" width="100%" height="800" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>
+        
+            <iframe class= "spotify-jamming" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0ExPOKGYA2HAykGEsCxJS6?utm_source=generator" width="100%" height="350" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <img class = "transparent-center", src = "images/dreams.png">
+        <div>
+            <p class = "what-im-jamming-word">
+                <strong>What's in my head rent free rn:</strong>
+            </p>
+        </div>
+            
+    </body>
+</html>
+
+
